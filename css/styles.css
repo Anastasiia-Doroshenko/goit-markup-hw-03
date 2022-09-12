@@ -32,8 +32,6 @@ body {
     letter-spacing: 0.03em;
     font-size: 14px;
     line-height: 1.71;
-
-    list-style: none;
 }
 /* Шапка сайту */
 
@@ -69,7 +67,8 @@ body {
     font-weight: 500;
     line-height: 1.14;
     letter-spacing: 0.02em;
-    text-decoration: none;
+
+    list-style: none;
 }
 
 .site-nav .link:hover,
@@ -77,10 +76,9 @@ body {
     color: var(--accent-color);
 }
 
-.link {
+.site-nav {
     list-style: none;
 }
-
 /* Контакти */
 
 .contacts {
@@ -91,12 +89,15 @@ body {
     letter spacing: 0.02em;
 
     text-decoration: none;
-    list-style: none;
 }
 
 .contacts:hover,
 .contacts:focus {
     color: var(--accent-color);
+}
+
+.header-contacts {
+    list-style: none;
 }
 
 /* Герой */
@@ -130,7 +131,7 @@ body {
 
 .hero-button:hover,
 .hero-button:focus {
-    color: var(--accent-color);
+    color: var(--footer-text-color);
 }
 
 /* Переваги */
@@ -144,6 +145,10 @@ body {
     color: var(--title-text-color);    
 }
 
+.benefits-list {
+    list-style: none;
+}
+
 /* Діяльність */
 
 .activity-title {
@@ -153,6 +158,9 @@ body {
     text-align: center;
 }
 
+.activity-list {
+    list-style: none;
+}
 /* Команда */
 
 .team {
@@ -177,6 +185,10 @@ body {
 .team-desc {
     color: var(--title-text-color);
     font-weight: 400;
+}
+
+.team-list {
+    list-style: none;
 }
 
 /* Футер */
@@ -208,6 +220,9 @@ body {
     color: var(--footer-text-color);
 
     text-decoration: none;
+}
+
+.footer-list {
     list-style: none;
 }
 
@@ -220,7 +235,6 @@ body {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.6;
-    list-style: none;
     cursor: pointer;
 } 
 
@@ -242,4 +256,12 @@ body {
 
     font-size: 16px;
     line-height: 1.9;
+}
+
+.portfolio-list {
+    list-style: none;
+}
+
+.portfolio-examples {
+    list-style: none;
 }
