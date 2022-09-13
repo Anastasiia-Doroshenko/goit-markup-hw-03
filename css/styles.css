@@ -33,11 +33,31 @@ body {
     font-size: 14px;
     line-height: 1.71;
 }
+h1, 
+h2, 
+h3, 
+p, 
+ul {
+    padding: 0;
+    margin: 0;
+}
+
 /* Шапка сайту */
 
 .header {
     background-color: var(--main-white-color);
 }
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    
+    outline: 2px solid tomato;
+}
+
 /* Лого */
 
 .logo {
@@ -106,7 +126,6 @@ body {
     color: var(--main-white-color);
     background-color: var(--footer-bcg-color);
 
-
     letter spacing: 0.06em;
     text-transform: uppercase;
     text-align: center;
@@ -116,16 +135,23 @@ body {
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
+    margin-bottom: 30px;
 }
 
 .hero-button {
+    border-radius: 4px;
+    padding: 10px 32px;
+    min-width: 216px;
+    text-align: center;
+    border: 1px solid transparent;
+
     color: var(--main-white-color);
     background-color: var(--accent-color);
 
     font-weight: 700;
     font-size: 16px;
     line-height: 1.87;
-
+    
     cursor: pointer;
 }
 
@@ -136,9 +162,15 @@ body {
 
 /* Переваги */
 
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
 .benefits-title {
     font-weight: 700;
     line-height: 1.14;
+    margin-bottom: 10px;
 }
 
 .benefits-text {
@@ -151,11 +183,14 @@ body {
 
 /* Діяльність */
 
+
 .activity-title {
     font-weight: 700;
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
+
+    margin-bottom: 50px;
 }
 
 .activity-list {
@@ -168,6 +203,8 @@ body {
 
     font-size: 16px;
     line-height: 1.19;
+
+    margin-bottom: 94px;
 }
 
 .team-title {
@@ -175,16 +212,20 @@ body {
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
+    padding-top: 94px;
+    padding-bottom: 50px;
 }
 
 .team-subtitle {
     font-weight: 500;
-    
+    padding-top: 30px;    
+    padding-bottom: 10px;
 }
 
 .team-desc {
     color: var(--title-text-color);
     font-weight: 400;
+    padding-bottom: 30px;
 }
 
 .team-list {
@@ -205,6 +246,9 @@ body {
     font-size: 26px;
     line-height: 1.19;
     text-decoration: none;
+
+    padding-top: 60px;
+    padding-bottom: 20px;
 }
 
 .footer-logo .accent {
@@ -265,3 +309,7 @@ body {
 .portfolio-examples {
     list-style: none;
 }
+
+
+/* додавати outline та bcgc поки верстаеш, щоб знати де факапиш - перед здачею - видалити  */
+/* висота не для блоків з текстом */
