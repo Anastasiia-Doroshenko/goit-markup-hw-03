@@ -21,6 +21,8 @@
     --footer-text-color: rgba(255, 255, 255, 0.6);
     --main-white-color: #FFFFFF;
     --main-black-color: #000000;
+    --border-color: #EEEEEE;
+    --border-header: #ECECEC;
 }
 
 body {
@@ -33,29 +35,67 @@ body {
     font-size: 14px;
     line-height: 1.71;
 }
-h1, 
-h2, 
-h3, 
-p, 
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
 ul {
+    list-style: none;
     padding: 0;
     margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    width: 370px;
+    height: auto;
 }
 
 /* Шапка сайту */
 
 .header {
     background-color: var(--main-white-color);
+    border-bottom: 1px solid var(--border-header);
 }
 
 .container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 1200px;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
     padding-left: 15px;
     padding-right: 15px;
-    
-    outline: 2px solid tomato;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-header {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
 }
 
 /* Лого */
@@ -67,7 +107,9 @@ ul {
     font-weight: 700;
     font-size: 26px;
     line-height: 1.19;
-    text-decoration: none;
+    text-decoration: none; 
+
+    margin-right: 93px;
 }
 
 .logo .accent {
@@ -81,25 +123,39 @@ ul {
 
 /* Навігація по сайту */
 
-.site-nav .link {
+.nav-link {
     color:  var(--primery-text-color);
 
     font-weight: 500;
     line-height: 1.14;
     letter-spacing: 0.02em;
-
+    text-decoration: none;
     list-style: none;
+
+    display: inline-block;
+    padding-top: 32px;
+    padding-bottom: 32px;
 }
 
-.site-nav .link:hover,
-.site-nav .link:focus {
+.nav-link:hover,
+.nav-link:focus {
     color: var(--accent-color);
 }
 
 .site-nav {
     list-style: none;
 }
+
 /* Контакти */
+.header-contacts {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.header-item:not(:last-child) {
+    margin-right: 50px;
+}
 
 .contacts {
     color: var(--title-text-color);
@@ -116,12 +172,12 @@ ul {
     color: var(--accent-color);
 }
 
-.header-contacts {
-    list-style: none;
+.contact-item:not(:last-child) {
+    margin-right: 50px;
 }
 
 /* Герой */
-
+/* макс відз для тексту  */
 .hero {
     color: var(--main-white-color);
     background-color: var(--footer-bcg-color);
@@ -129,6 +185,10 @@ ul {
     letter spacing: 0.06em;
     text-transform: uppercase;
     text-align: center;
+    max-width: 1600px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    
 }
 
 .hero-title {
@@ -136,6 +196,11 @@ ul {
     font-size: 44px;
     line-height: 1.36;
     margin-bottom: 30px;
+
+    max-width: 696px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .hero-button {
@@ -167,6 +232,27 @@ ul {
     padding-bottom: 94px;
 }
 
+.benefits .container {
+    display: flex;
+}
+
+.benefits-list {
+    display: flex;
+}
+
+.benefits-subject {
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+}
+
 .benefits-title {
     font-weight: 700;
     line-height: 1.14;
@@ -174,12 +260,18 @@ ul {
 }
 
 .benefits-text {
-    color: var(--title-text-color);    
+    color: var(--title-text-color);   
+    max-width: 270px; 
 }
 
 .benefits-list {
     list-style: none;
 }
+
+.benefits-item:not(:last-child) {
+    margin-right: 30px;
+}
+
 
 /* Діяльність */
 
@@ -194,8 +286,14 @@ ul {
 }
 
 .activity-list {
+    display: flex;
     list-style: none;
 }
+
+.activity-item:not(:last-child) {
+    margin-right: 30px;
+}
+
 /* Команда */
 
 .team {
@@ -218,24 +316,31 @@ ul {
 
 .team-subtitle {
     font-weight: 500;
-    padding-top: 30px;    
-    padding-bottom: 10px;
+    margin-top: 30px;    
+    margin-bottom: 10px;
 }
 
 .team-desc {
     color: var(--title-text-color);
     font-weight: 400;
-    padding-bottom: 30px;
 }
 
 .team-list {
+    display: flex;
     list-style: none;
+}
+
+.team-item:not(:last-child) {
+    margin-right: 30px;
 }
 
 /* Футер */
 
 .footer {
     background-color: var(--footer-bcg-color);
+
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .footer-logo {
@@ -246,9 +351,8 @@ ul {
     font-size: 26px;
     line-height: 1.19;
     text-decoration: none;
-
-    padding-top: 60px;
-    padding-bottom: 20px;
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
 .footer-logo .accent {
@@ -273,6 +377,21 @@ ul {
 
 /* Портфоліо */
 
+.portfolio-caption {
+    position: absolute;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+}
+
+
+
 .portfolio-button {
     background-color: var(--secondary-bcg-color);
 
@@ -280,6 +399,14 @@ ul {
     font-size: 16px;
     line-height: 1.6;
     cursor: pointer;
+
+    border-radius: 4px;
+    padding: 6px 22px;
+    
+    text-align: center;
+    border: 1px solid transparent;
+    min-width: 73px;
+
 } 
 
 .portfolio-button:hover,
@@ -288,11 +415,23 @@ ul {
     background-color: var(--accent-color);
 }
 
+.portfolio-list {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.portfolio-groups:not(:last-child) {
+    margin-right: 8px;
+}
+
 .portfolio-subtitle {
     font-weight: 700;
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
+    margin-top: 20px;
+    margin-bottom: 4px;
 }
 
 .portfolio-desc {
@@ -300,16 +439,22 @@ ul {
 
     font-size: 16px;
     line-height: 1.9;
+    margin-bottom: 20px;
 }
 
 .portfolio-list {
+    
     list-style: none;
 }
 
 .portfolio-examples {
     list-style: none;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
-
-/* додавати outline та bcgc поки верстаеш, щоб знати де факапиш - перед здачею - видалити  */
-/* висота не для блоків з текстом */
+.portfolio-sample {
+    border-bottom: 1px solid var(--border-color);
+}
